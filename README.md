@@ -40,5 +40,8 @@ Below is a table of contents for the major sections of this documentation. Each 
 
 These TypeScript interfaces provide a type-safe foundation with comprehensive inline documentation (using TSDoc comments) to guide developers and ensure consistency when writing character cards.
 
+![image](https://github.com/user-attachments/assets/8508a623-f6a0-4f89-8fa9-0d11e8328898)
+
+
 Happy coding and immersive roleplaying!
 
