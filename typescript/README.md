@@ -18,8 +18,6 @@ Using these interfaces offers the following benefits:
   - [extensions.ts](#extensionsts)
   - [system-prompt.ts](#system-promptts)
   - [index.ts](#indexts)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Usage
 
