@@ -17,7 +17,7 @@ The V2 format remains largely compatible with V1: all original fields from V1 ar
 ```
 
 - **spec** – identifies the format as Character Card V2 (must be `"chara_card_v2"`).
-- **spec_version** – the version number of the spec (for V2, this must be `"2.0"` ([malfoyslastname/character-card-spec-v2](https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md#:~:text=))).
+- **spec_version** – the version number of the spec (for V2, this must be `"2.0"` ([character-card-spec-v2/spec_v2.md at main · malfoyslastname/character-card-spec-v2 · GitHub](https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md#:~:text=))).
 - **data** – an object containing all character fields (name, description, personality, etc., including the new V2 fields).
 
 Below is a table of contents for the major sections of this documentation. Each section provides details on a subset of the schema, with field definitions, usage examples, and guidelines.
@@ -29,21 +29,16 @@ Below is a table of contents for the major sections of this documentation. Each 
 - **[Character Book](character_book.md)** – Details on the `character_book` field, a structured in-card lorebook for character-specific world info or memory.
 - **[Entries](entries.md)** – Details on lorebook entries within a Character Book (trigger keys, content, priority, etc.).
 - **[Extensions](extensions.md)** – Details on the `extensions` fields, which provide a flexible way to include extra custom data at various levels of the card.
-- **[Examples](examples.md)** - Example Character Cards
+- **[Examples](examples.md)** – Example Character Cards.
+- **[TypeScript Interfaces](./typescript/)** – A complete set of TypeScript interfaces for the Character Card V2 specification. This folder contains detailed, documented interfaces to assist developers in creating, validating, and maintaining character cards. The available files include:
+  - [`character-book.ts`](./typescript/character-book.ts)
+  - [`character-data.ts`](./typescript/character-data.ts)
+  - [`entry.ts`](./typescript/entry.ts)
+  - [`extensions.ts`](./typescript/extensions.ts)
+  - [`system-prompt.ts`](./typescript/system-prompt.ts)
+  - [`index.ts`](./typescript/index.ts)
 
-## TypeScript Interface
+These TypeScript interfaces provide a type-safe foundation with comprehensive inline documentation (using TSDoc comments) to guide developers and ensure consistency when writing character cards.
 
-```typescript
-/**
- * @interface CharacterCardV2
- * @description Represents the overall Character Card V2 structure.
- */
-export interface CharacterCardV2 {
-  /** Identifier for the spec; must be "chara_card_v2". */
-  spec: string;
-  /** Specification version; for V2 this is "2.0". */
-  spec_version: string;
-  /** Container for all character-specific fields. */
-  data: CharacterData;
-}
-```
+Happy coding and immersive roleplaying!
+
