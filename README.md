@@ -17,7 +17,7 @@ The V2 format remains largely compatible with V1: all original fields from V1 ar
 ```
 
 - **spec** – identifies the format as Character Card V2 (must be `"chara_card_v2"`).
-- **spec_version** – the version number of the spec (for V2, this must be `"2.0"` ([character-card-spec-v2/spec_v2.md at main · malfoyslastname/character-card-spec-v2 · GitHub](https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md#:~:text=))).
+- **spec_version** – the version number of the spec (for V2, this must be `"2.0"` ([character-card-spec-v2/spec_v2.md](https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md#:~:text=))).
 - **data** – an object containing all character fields (name, description, personality, etc., including the new V2 fields).
 
 Below is a table of contents for the major sections of this documentation. Each section provides details on a subset of the schema, with field definitions, usage examples, and guidelines.
