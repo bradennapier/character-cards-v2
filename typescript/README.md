@@ -11,17 +11,13 @@ Using these interfaces offers the following benefits:
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
 - [Files Overview](#files-overview)
-  - [character-book.ts](#character-bookts)
-  - [character-data.ts](#character-datats)
-  - [entry.ts](#entryts)
-  - [extensions.ts](#extensionsts)
-  - [system-prompt.ts](#system-promptts)
-  - [index.ts](#indexts)
-- [Contributing](#contributing)
-- [License](#license)
+  - [character-book.ts](./character-book.ts)
+  - [character-data.ts](./character-data.ts)
+  - [entry.ts](./entry.ts)
+  - [extensions.ts](./extensions.ts)
+  - [system-prompt.ts](./system-prompt.ts)
+  - [index.ts](./index.ts)
 
 ## Installation
 
