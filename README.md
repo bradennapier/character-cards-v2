@@ -1,5 +1,3 @@
-Perfect. I’ll create a full documentation set in Markdown format, covering each key component of the Character Card V2 spec. The documentation will:
-
 # Character Card Spec V2 Documentation
 
 This documentation covers the **Character Card Specification V2**, an updated format for AI character cards building upon the earlier Tavern Card V1 format. Character Card V2 introduces new fields (such as a dedicated system prompt, post-history instructions, alternate greetings, and an embedded character-specific lorebook) to give bot creators more control and flexibility. These additions allow creators to set default system instructions, provide multiple greeting messages, attach character lore in the card, and include out-of-character notes for users.
