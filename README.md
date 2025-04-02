@@ -30,3 +30,20 @@ Below is a table of contents for the major sections of this documentation. Each 
 - **[Entries](entries.md)** – Details on lorebook entries within a Character Book (trigger keys, content, priority, etc.).
 - **[Extensions](extensions.md)** – Details on the `extensions` fields, which provide a flexible way to include extra custom data at various levels of the card.
 - **[Examples](examples.md)** - Example Character Cards
+
+## TypeScript Interface
+
+```typescript
+/**
+ * @interface CharacterCardV2
+ * @description Represents the overall Character Card V2 structure.
+ */
+export interface CharacterCardV2 {
+  /** Identifier for the spec; must be "chara_card_v2". */
+  spec: string;
+  /** Specification version; for V2 this is "2.0". */
+  spec_version: string;
+  /** Container for all character-specific fields. */
+  data: CharacterData;
+}
+```
