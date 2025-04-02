@@ -20,16 +20,6 @@ export interface Extensions {
  * background or contextual information that can be injected into the AI's prompt when specific trigger keywords 
  * (defined in {@link Entry.keys}) are detected in the conversation.
  *
- * @example
- * const entryExample: Entry = {
- *   keys: ["royal", "lineage"],
- *   content: "Queen Seraphina descends from a long line of revered rulers known for their wisdom and valor.",
- *   extensions: {},
- *   enabled: true,
- *   insertion_order: 1,
- *   case_sensitive: false
- * };
- *
  * @tips
  * - Use clear and specific keywords in {@link Entry.keys} to ensure the entry triggers only in the intended context.
  * - Adjust {@link Entry.insertion_order} to control the order of lore injection; lower numbers insert earlier.
@@ -43,6 +33,18 @@ export interface Extensions {
  *
  * @see {@link CharacterBook} for more details on how lore entries are incorporated within a character's lorebook.
  * @see {@link https://github.com/malfoyslastname/character-card-spec-v2|Character Card Spec V2 on GitHub} for further details on the overall specification.
+ *
+ * @example
+ * ```typescript
+ * const entryExample: Entry = {
+ *   keys: ["royal", "lineage"],
+ *   content: "Queen Seraphina descends from a long line of revered rulers known for their wisdom and valor.",
+ *   extensions: {},
+ *   enabled: true,
+ *   insertion_order: 1,
+ *   case_sensitive: false
+ * };
+ * ```
  */
 export interface Entry {
   /**
