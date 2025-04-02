@@ -1,5 +1,46 @@
 # Entries
 
+## TypeScript Interface
+
+```typescript
+/**
+ * @interface Entry
+ * @description Represents an individual lore entry that can be triggered by keywords in the conversation.
+ */
+export interface Entry {
+  /** List of primary trigger keywords that activate this lore entry. */
+  keys: string[];
+  /** The lore text to be injected when the entry is triggered. */
+  content: string;
+  /** Custom extension data specific to this entry. */
+  extensions: { [key: string]: any };
+  /** Flag indicating whether this entry is active. */
+  enabled: boolean;
+  /** Numeric value controlling the ordering of entries when multiple are triggered. */
+  insertion_order: number;
+  /** Optional flag for case-sensitive keyword matching (default is false). */
+  case_sensitive?: boolean;
+  /** Optional internal name for identification. */
+  name?: string;
+  /** Optional priority value for dropping the entry if the token budget is exceeded (lower means more disposable). */
+  priority?: number;
+  /** Optional internal identifier for the entry. */
+  id?: number;
+  /** Optional comment or note about the entry, for human reference. */
+  comment?: string;
+  /** If true, both a primary and secondary key are required to trigger the entry. */
+  selective?: boolean;
+  /** Optional secondary trigger keywords; used when 'selective' is true. */
+  secondary_keys?: string[];
+  /** If true, this entry is always injected into the prompt regardless of triggers. */
+  constant?: boolean;
+  /** Specifies the insertion position relative to the character’s main definition ("before_char" or "after_char"). */
+  position?: 'before_char' | 'after_char';
+}
+```
+
+## Summary
+
 Each **entry** in the character book is a discrete piece of lore or information that can be injected into the conversation when relevant. Entries consist of trigger keywords and the content to insert, along with some settings controlling their behavior. This section describes each property of an entry and offers guidance on how to use them.
 
 **How Lore Entries Work (Overview):** When a conversation is ongoing, the system will look at the recent messages (up to the `scan_depth` limit) and see if any of the defined `keys` appear. If a match is found and the entry is enabled, the entry’s `content` becomes a candidate to be inserted. If multiple entries trigger, they can all be inserted, but the total inserted lore is limited by `token_budget`. If that budget would be exceeded, entries with lower priority values are dropped first. The remaining entries are then inserted into the prompt, either before or after the character's main definition block depending on their `position` settings. This injection happens typically right before the AI generates its next reply, providing the model with additional context just in time.
