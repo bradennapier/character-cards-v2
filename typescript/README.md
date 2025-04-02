@@ -19,9 +19,3 @@ Using these interfaces offers the following benefits:
   - [system-prompt.ts](./system-prompt.ts)
   - [index.ts](./index.ts)
 
-## Installation
-
-You can clone this repository or integrate these files directly into your project. They are written in TypeScript and can be used with any build system that supports TypeScript.
-
-```bash
-git clone https://github.com/yourusername/character-card-v2-ts.git
