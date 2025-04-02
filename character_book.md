@@ -1,5 +1,32 @@
 # Character Book (`character_book`)
 
+## TypeScript Interface
+
+```typescript
+/**
+ * @interface CharacterBook
+ * @description Represents a lorebook attached to a character, containing background details and lore entries.
+ */
+export interface CharacterBook {
+  /** Optional title of the lorebook. */
+  name?: string;
+  /** Optional description explaining the purpose or content of the lorebook. */
+  description?: string;
+  /** Number of recent messages to scan for triggering lore entries. */
+  scan_depth?: number;
+  /** Maximum tokens allowed for lore entries inserted into the prompt. */
+  token_budget?: number;
+  /** Flag to enable recursive scanning of inserted lore. */
+  recursive_scanning?: boolean;
+  /** Custom extension data for the lorebook. */
+  extensions: { [key: string]: any };
+  /** Array of lore entries in the lorebook. */
+  entries: Entry[];
+}
+```
+
+## Summary
+
 The **Character Book** is a built-in lorebook attached to the character card. It allows creators to package supplemental world or character information (often called "lore entries") directly with the character, instead of requiring separate files. This is useful for providing extended backstory, world details, or any information that the AI should know or recall when certain topics come up in the conversation. The character book concept in V2 essentially creates a distinction between a user's global "world book" and a character-specific book – with the character’s book taking priority if both are present.
 
 The character book is represented as an object in the `character_book` field, containing its own properties and a list of entries. If a character does not require any lore entries or additional context beyond the main fields, this field can be omitted or left empty. When present, frontends that support V2 will automatically utilize the character book’s entries during chat (by scanning the conversation for triggers and injecting relevant lore).
