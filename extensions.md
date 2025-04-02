@@ -1,5 +1,19 @@
 # Extensions
 
+## TypeScript Interface
+
+```typescript
+/**
+ * @interface Extensions
+ * @description A generic mapping of key-value pairs for custom metadata beyond the defined spec.
+ */
+export interface Extensions {
+  [key: string]: any;
+}
+```
+
+## Summary
+
 The **extensions** fields in Character Card V2 (found at the character level, within the `character_book`, and within each entry) are designed as catch-all containers for any extra information that isn't covered by the official spec fields. They provide flexibility for developers and advanced users to include custom data without breaking compatibility, because applications that don't understand a particular extension will simply ignore it but will still carry it along when saving or transferring the card.
 
 Key aspects of `extensions` usage as defined by the spec:
