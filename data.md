@@ -1,5 +1,48 @@
 # Data Fields
 
+## TypeScript Interface
+
+```typescript
+/**
+ * @interface CharacterData
+ * @description Contains core character properties (name, description, personality, etc.) along with new V2 fields.
+ */
+export interface CharacterData {
+  /** The character's display name. */
+  name: string;
+  /** Detailed description of the character. */
+  description: string;
+  /** Summary of personality traits. */
+  personality: string;
+  /** The scenario or current context for the character. */
+  scenario: string;
+  /** The character’s first message (greeting) at the start of a conversation. */
+  first_mes: string;
+  /** Example dialogues that demonstrate character behavior. */
+  mes_example: string;
+  /** Out-of-character notes for the creator's reference (not injected into prompts). */
+  creator_notes: string;
+  /** Custom system prompt that overrides the default system prompt. */
+  system_prompt: string;
+  /** Instructions inserted after the conversation history (e.g., a jailbreak prompt). */
+  post_history_instructions: string;
+  /** Array of alternative greeting messages for variety in opening lines. */
+  alternate_greetings: string[];
+  /** Array of tags used for categorization and filtering. */
+  tags: string[];
+  /** Identifier for the creator of the character card. */
+  creator: string;
+  /** Version of the character card (e.g., "1.0"). */
+  character_version: string;
+  /** Custom extension data for additional metadata. */
+  extensions: { [key: string]: any };
+  /** Optional character-specific lorebook containing background lore and dynamic entries. */
+  character_book?: CharacterBook;
+}
+```
+
+## Summary
+
 The `data` object of a Character Card V2 contains all the fields that define the character. This includes the original **V1 fields** (name, description, personality, scenario, first message, and example dialogues) as well as new fields introduced in V2 (such as creator notes, system prompt overrides, etc.). All V1 fields inside `data` behave exactly as they did in the V1 specification, aside from being nested under `data`.
 
 Below is a breakdown of each field within `data`, including their types, meanings, and usage guidelines.
